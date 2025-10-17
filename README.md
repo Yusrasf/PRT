@@ -1,1 +1,1 @@
-# PRT - FHIR - based vaccination tracker
+# PRT - FHIR - based vaccination tracking app
