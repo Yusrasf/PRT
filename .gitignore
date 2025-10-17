@@ -2,6 +2,4 @@
 hapi-fhir-jpaserver-starter/
 
 # Ignore Synthea generated outputs
-synthea/build/
-synthea/output/
-synthea/*.log
+Synthea
