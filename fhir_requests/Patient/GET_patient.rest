@@ -4,5 +4,5 @@ Accept: application/fhir+json
 
 
 ### Get Patient by ID
-GET http://localhost:8080/fhir/Patient/1
+GET http://localhost:8080/fhir/Patient/3
 Accept: application/fhir+json
