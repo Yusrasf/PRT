@@ -1,0 +1,3 @@
+### Delete Immunization
+DELETE http://localhost:8080/fhir/Immunization/1
+Accept: application/fhir+json

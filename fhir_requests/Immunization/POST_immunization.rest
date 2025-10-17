@@ -1,0 +1,12 @@
+### Create a new Immunization record
+POST http://localhost:8080/fhir/Immunization
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Immunization",
+  "status": "completed",
+  "vaccineCode": { "text": "COVID-19 Vaccine" },
+  "patient": { "reference": "Patient/1" },
+  "occurrenceDateTime": "2025-10-17"
+}

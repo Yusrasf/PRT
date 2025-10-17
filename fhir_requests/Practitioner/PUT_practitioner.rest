@@ -1,0 +1,13 @@
+### Update Practitioner
+PUT http://localhost:8080/fhir/Practitioner/1
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Practitioner",
+  "id": "1",
+  "name": [
+    { "family": "Smith", "given": ["John", "Paul"] }
+  ],
+  "gender": "male"
+}

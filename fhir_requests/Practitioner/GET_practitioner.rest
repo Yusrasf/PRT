@@ -1,2 +1,9 @@
-GET {{base_url}}/Patient
+### List all Practitioners
+GET http://localhost:8080/fhir/Practitioner
+Accept: application/fhir+json
+
+###
+
+### Get Practitioner by ID
+GET http://localhost:8080/fhir/Practitioner/1
 Accept: application/fhir+json

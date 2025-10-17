@@ -1,0 +1,13 @@
+### Create a new Patient
+POST http://localhost:8080/fhir/Patient
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Patient",
+  "name": [
+    { "family": "Doe", "given": ["Jane"] }
+  ],
+  "gender": "female",
+  "birthDate": "1985-03-15"
+}

@@ -1,0 +1,16 @@
+### Update Observation
+PUT http://localhost:8080/fhir/Observation/1
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "1",
+  "status": "final",
+  "category": [
+    { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }
+  ],
+  "code": { "text": "Blood Pressure - Updated" },
+  "subject": { "reference": "Patient/1" },
+  "valueQuantity": { "value": 118, "unit": "mmHg" }
+}

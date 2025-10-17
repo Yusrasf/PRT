@@ -1,0 +1,14 @@
+### Update an existing Patient
+PUT http://localhost:8080/fhir/Patient/1
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Patient",
+  "id": "1",
+  "name": [
+    { "family": "Doe", "given": ["Jane", "Marie"] }
+  ],
+  "gender": "female",
+  "birthDate": "1985-03-15"
+}
