@@ -5,24 +5,16 @@ Accept: application/fhir+json
 
 {
   "resourceType": "Organization",
-  "id": "1",
-  "name": "Clinica Sanatate Plus",
-  "type": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-          "code": "prov",
-          "display": "Healthcare Provider"
-        }
-      ]
-    }
-  ],
+  "name": "Kinderarztpraxis Wien",
   "address": [
     {
-      "line": ["Str. Dorobantilor 99"],
-      "city": "Cluj-Napoca",
-      "country": "RO"
+      "type": "both",
+      "line": [
+        "Hauptstraße 12"
+      ],
+      "city": "Wien",
+      "postalCode": "1010",
+      "country": "AT"
     }
   ]
 }
