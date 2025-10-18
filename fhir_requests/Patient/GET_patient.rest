@@ -1,8 +1,8 @@
 ### List all Patients
-GET http://localhost:8080/fhir/Patient
+GET http://localhost:8080/fhir/Patient/
 Accept: application/fhir+json
 
 
 ### Get Patient by ID
-GET http://localhost:8080/fhir/Patient/3
+GET http://localhost:8080/fhir/Patient/81c21d84-0373-e4ec-e881-5a6561aceb93
 Accept: application/fhir+json
