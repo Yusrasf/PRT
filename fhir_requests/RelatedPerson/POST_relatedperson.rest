@@ -5,9 +5,8 @@ Accept: application/fhir+json
 
 {
   "resourceType": "RelatedPerson",
-  "id": "relatedperson-1",
   "patient": {
-    "reference": "Patient/1"
+    "reference": "Patient/40"
   },
   "relationship": [
     {

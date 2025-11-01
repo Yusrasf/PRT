@@ -2,7 +2,7 @@
   "resourceType": "RelatedPerson",
   "id": "relatedperson-1",
   "patient": {
-    "reference": "Patient/patient-1"
+    "reference": "Patient/1"
   },
   "relationship": [
     {

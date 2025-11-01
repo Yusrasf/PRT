@@ -5,10 +5,11 @@ Accept: application/fhir+json
 
 {
   "resourceType": "Patient",
+  "id": "patient-10",
   "identifier": [
     {
       "system": "urn:oid:1.2.276.0.76.4.1",
-      "value": "AT100000001",
+      "value": "AT100000010",
       "type": {
         "coding": [
           {
@@ -23,27 +24,27 @@ Accept: application/fhir+json
   "name": [
     {
       "use": "official",
-      "family": "Müller",
+      "family": "Lang",
       "given": [
-        "Lukas"
+        "Marie"
       ]
     }
   ],
-  "gender": "male",
-  "birthDate": "2024-05-10",
+  "gender": "female",
+  "birthDate": "2024-05-22",
   "address": [
     {
       "type": "both",
       "line": [
-        "Hauptstraße 12"
+        "Bahnhofstraße 15"
       ],
-      "city": "Wien",
-      "postalCode": "1010",
+      "city": "Dornbirn",
+      "postalCode": "6850",
       "country": "AT"
     }
   ],
   "managingOrganization": {
-    "reference": "Organization/clinic-1",
-    "display": "Kinderarztpraxis Wien"
+    "reference": "Organization/10",
+    "display": "Kinderarztpraxis Dornbirn"
   }
 }

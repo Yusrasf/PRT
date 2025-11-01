@@ -1,0 +1,4 @@
+### GET RelatedPerson
+GET http://localhost:8080/fhir/RelatedPerson
+Content-Type: application/fhir+json
+Accept: application/fhir+json
