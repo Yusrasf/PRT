@@ -1,0 +1,250 @@
+### Element: identifier
+### Create an ImmunizationRecommendation with an identifier
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "identifier": [
+    {
+      "system": "http://example.org/ids",
+      "value": "rec-001"
+    }
+  ]
+}
+
+### Element: patient
+### Create an ImmunizationRecommendation for a specific patient
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "patient": {
+    "reference": "Patient/{patient-id}"
+  }
+}
+
+### Element: date
+### Set the date the recommendation was created
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "date": "YYYY-MM-DDThh:mm:ss+TZ"
+}
+
+### Element: authority
+### Reference the organization providing the recommendation
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "authority": {
+    "reference": "Organization/{organization-id}"
+  }
+}
+
+### Element: recommendation.vaccineCode
+### Specify the vaccine for this recommendation
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "vaccineCode": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "XXX",
+              "display": "Vaccine Name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+### Element: recommendation.targetDisease
+### Specify the disease targeted by the vaccine
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "targetDisease": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "XXXXXX",
+              "display": "Disease Name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+### Element: recommendation.forecastStatus
+### Specify the forecast status of the recommendation
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "forecastStatus": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/immunization-recommendation-status",
+            "code": "due",
+            "display": "Due"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+### Element: recommendation.dateCriterion.code
+### Specify the type of date criterion (earliest, recommended, latest)
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "dateCriterion": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-date-criterion",
+                "code": "earliest",
+                "display": "Earliest Date"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+### Element: recommendation.dateCriterion.value
+### Specify the value for the date criterion
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "dateCriterion": [
+        {
+          "value": "YYYY-MM-DD"
+        }
+      ]
+    }
+  ]
+}
+
+### Element: recommendation.description
+### Add a description to the recommendation
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "description": "This vaccine is recommended due to outbreak risk."
+    }
+  ]
+}
+
+### Element: recommendation.series
+### Specify the vaccination series name
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "series": "COVID-19 Primary Series"
+    }
+  ]
+}
+
+### Element: recommendation.doseNumber
+### Specify the dose number in the series
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "doseNumber": 1
+    }
+  ]
+}
+
+### Element: recommendation.seriesDoses
+### Specify total number of doses in the series
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "seriesDoses": 2
+    }
+  ]
+}
+
+### Element: recommendation.supportingImmunization
+### Reference an Immunization that supports this recommendation
+POST http://localhost:8080/fhir/ImmunizationRecommendation
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "ImmunizationRecommendation",
+  "recommendation": [
+    {
+      "supportingImmunization": [
+        {
+          "reference": "Immunization/{immunization-id}"
+        }
+      ]
+    }
+  ]
+}
