@@ -5,6 +5,7 @@ Accept: application/fhir+json
 
 {
   "resourceType": "Organization",
+  "id": "clinic-1",
   "name": "Kinderarztpraxis Wien",
   "address": [
     {

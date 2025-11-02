@@ -1,9 +1,5 @@
-### List all Immunizations
-GET http://localhost:8080/fhir/Immunization
+### List all Patients
+GET http://localhost:8080/fhir/Patient
 Accept: application/fhir+json
 
-###
-
-### Get Immunization by ID
-GET http://localhost:8080/fhir/Immunization/1
-Accept: application/fhir+json
+### ───────────────────────────────

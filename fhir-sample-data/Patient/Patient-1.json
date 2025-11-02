@@ -42,8 +42,5 @@
     "reference": "Organization/1",
     "display": "Kinderarztpraxis Wien"
   }
-  "managingOrganization": {
-    "reference": "Organization/1",
-    "display": "Kinderarztpraxis Wien"
-  }
+  
 }
