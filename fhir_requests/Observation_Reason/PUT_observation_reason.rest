@@ -1,0 +1,115 @@
+### Element: status for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "status": "amended"
+}
+
+### Element: category for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "clinical",
+          "display": "Clinical"
+        }
+      ]
+    }
+  ]
+}
+
+### Element: code for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "REASON_CODE",
+        "display": "Updated Reason for Immunization"
+      }
+    ]
+  }
+}
+
+### Element: subject for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "subject": {
+    "reference": "Patient/{patient-id}"
+  }
+}
+
+### Element: encounter for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "encounter": {
+    "reference": "Encounter/{encounter-id}"
+  }
+}
+
+### Element: effectiveDateTime for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "effectiveDateTime": "YYYY-MM-DDThh:mm:ss+TZ"
+}
+
+### Element: valueString for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "valueString": "Updated reason description, e.g., patient has allergy"
+}
+
+### Element: derivedFrom for Immunization.reason
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "derivedFrom": [
+    {
+      "reference": "Immunization/{immunization-id}"
+    }
+  ]
+}
+
+

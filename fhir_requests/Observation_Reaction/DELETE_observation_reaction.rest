@@ -1,3 +1,3 @@
-### Delete Observation
+### Delete Observation -  Immunization.reaction.manifestation
 DELETE http://localhost:8080/fhir/Observation/1
 Accept: application/fhir+json

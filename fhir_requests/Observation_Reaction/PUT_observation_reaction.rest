@@ -1,0 +1,121 @@
+### Element: status for Immunization.reaction.manifestation
+### Update the status of an existing Observation
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "status": "amended"  // e.g., final, amended, preliminary
+}
+
+### Element: category for Immunization.reaction.manifestation
+### Update the category of the Observation
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        }
+      ]
+    }
+  ]
+}
+
+### Element: code for Immunization.reaction.manifestation
+### Update the type of observation (e.g., reaction/manifestation code)
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "ASSERTION_CODE",
+        "display": "Updated Immunization Reaction"
+      }
+    ]
+  }
+}
+
+### Element: subject for Immunization.reaction.manifestation
+### Update the patient associated with the Observation
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "subject": {
+    "reference": "Patient/{patient-id}"
+  }
+}
+
+### Element: encounter for Immunization.reaction.manifestation
+### Update the encounter linked to the Observation
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "encounter": {
+    "reference": "Encounter/{encounter-id}"
+  }
+}
+
+### Element: effectiveDateTime for Immunization.reaction.manifestation
+### Update the date/time the observation occurred
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "effectiveDateTime": "YYYY-MM-DDThh:mm:ss+TZ"
+}
+
+### Element: valueString for Immunization.reaction.manifestation
+### Update the description of the reaction/manifestation
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "valueString": "Updated description of reaction, e.g., mild fever"
+}
+
+### Element: derivedFrom for Immunization.reaction.manifestation
+### Update the reference to the related Immunization
+PUT http://localhost:8080/fhir/Observation/{id}
+Content-Type: application/fhir+json
+Accept: application/fhir+json
+
+{
+  "resourceType": "Observation",
+  "id": "{id}",
+  "derivedFrom": [
+    {
+      "reference": "Immunization/{immunization-id}"
+    }
+  ]
+}
