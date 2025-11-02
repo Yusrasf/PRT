@@ -1,5 +1,3 @@
-### List all Patients
-GET http://localhost:8080/fhir/Patient
+### List all Immunizations based on elements
+GET http://localhost:8080/fhir/Immunization?_count=50&_include=Immunization:patient&_include=Immunization:performer
 Accept: application/fhir+json
-
-### ───────────────────────────────

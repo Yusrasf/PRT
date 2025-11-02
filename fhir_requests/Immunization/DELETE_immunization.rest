@@ -1,3 +1,7 @@
-### Delete Immunization
-DELETE http://localhost:8080/fhir/Immunization/1
+### Delete a specific Immunization by ID
+DELETE http://localhost:8080/fhir/Immunization/{id}
+Accept: application/fhir+json
+
+### Delete all Immunizations for a specific patient
+DELETE http://localhost:8080/fhir/Immunization?patient={patient-id}
 Accept: application/fhir+json
