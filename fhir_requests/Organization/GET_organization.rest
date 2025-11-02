@@ -1,9 +1,0 @@
-### List all Organization
-GET http://localhost:8080/fhir/Organization
-Accept: application/fhir+json
-
-###
-
-### Get Observation by ID
-GET http://localhost:8080/fhir/Organization/1clinic-1
-Accept: application/fhir+json

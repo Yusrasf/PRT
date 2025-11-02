@@ -1,3 +1,4 @@
-### Delete a Patient by ID
-DELETE http://localhost:8080/fhir/Patient/3
+### DELETE Patient
+### Deletes a specific Patient record
+DELETE http://localhost:8080/fhir/Patient/{id}
 Accept: application/fhir+json

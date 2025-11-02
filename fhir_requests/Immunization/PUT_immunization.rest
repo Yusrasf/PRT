@@ -1,193 +1,53 @@
-### Update the Immunization to reference an ImmunizationRecommendation - basedOn (ImmunizationRecommendation)
+### PUT Immunization
+### Updates the entire Immunization record (replace existing data)
 PUT http://localhost:8080/fhir/Immunization/{id}
 Content-Type: application/fhir+json
 Accept: application/fhir+json
 
 {
   "resourceType": "Immunization",
-  "id": "{id}",
+  "id": "{id}",   // Replace with the Immunization resource ID you want to update
+
   "basedOn": [
     {
-      "reference": "ImmunizationRecommendation/{recommendation-id}"
+      "reference": "ImmunizationRecommendation/12345",
+      "display": "Recommendation for Influenza Vaccine"
     }
-  ]
-}
+  ],
 
-### Update the status of the Immunization - Update status 
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
+  "status": "completed",
 
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
-  "status": "completed"
-}
-
-### Update the reason for the Immunization status - Update statusReason
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
   "statusReason": {
     "coding": [
       {
         "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
         "code": "IMMUNE",
-        "display": "Immune response indicated"
+        "display": "Patient immune"
       }
     ]
-  }
-}
+  },
 
-### Update the vaccine administered - Update vaccineCode
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
   "vaccineCode": {
     "coding": [
       {
         "system": "http://hl7.org/fhir/sid/cvx",
-        "code": "XXX",
-        "display": "Vaccine Name"
+        "code": "140",
+        "display": "Influenza, seasonal, injectable"
       }
-    ]
-  }
-}
+    ],
+    "text": "Influenza vaccine"
+  },
 
-### Update the patient associated with this Immunization - Update patient
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
   "patient": {
-    "reference": "Patient/{patient-id}"
-  }
-}
+    "reference": "Patient/123",
+    "display": "John Doe"
+  },
 
-### Update the encounter during which this Immunization was given - update Encounter
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
   "encounter": {
-    "reference": "Encounter/{encounter-id}"
-  }
-}
+    "reference": "Encounter/456",
+    "display": "Routine vaccination visit"
+  },
 
-### Update the date and time the vaccine was administered - occurrenceDateTime
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
+  "occurrenceDateTime": "2025-10-30T10:30:00+02:00",
 
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
-  "occurrenceDateTime": "YYYY-MM-DDThh:mm:ss+TZ"
-}
-
-### Update the practitioner who administered the vaccine - performer.actor (Practitioner)
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
   "performer": [
-    {
-      "actor": {
-        "reference": "Practitioner/{practitioner-id}"
-      }
-    }
-  ]
-}
-
-### Update or add a reaction for this Immunization - reaction.date & reaction.manifestation
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
-  "reaction": [
-    {
-      "date": "YYYY-MM-DDThh:mm:ss+TZ",
-      "detail": {
-        "reference": "Observation/{observation-id}"
-      },
-      "reported": true
-    }
-  ]
-}
-
-### Update the vaccination series name - protocolApplied.series
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
-  "protocolApplied": [
-    {
-      "series": "Series Name"
-    }
-  ]
-}
-
-### Update the organization responsible for the protocol - protocolApplied.authority
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
-  "protocolApplied": [
-    {
-      "authority": {
-        "reference": "Organization/{organization-id}"
-      }
-    }
-  ]
-}
-
-### Update the target disease for this vaccination series - protocolApplied.targetDisease
-PUT http://localhost:8080/fhir/Immunization/{id}
-Content-Type: application/fhir+json
-Accept: application/fhir+json
-
-{
-  "resourceType": "Immunization",
-  "id": "{id}",
-  "protocolApplied": [
-    {
-      "targetDisease": [
-        {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "XXXXXX",
-              "display": "Disease Name"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
