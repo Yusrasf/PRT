@@ -1,5 +1,5 @@
 # Ignore local HAPI server
-hapi-fhir-jpaserver-starter/
+hapi-fhir-jpaserver-starter
 
 # Ignore Synthea
 Synthea
