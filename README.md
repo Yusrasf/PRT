@@ -31,13 +31,16 @@ To build a functional FHIR-based Vaccination Registry that provides secure, stan
 7. Promote digital health literacy and patient empowerment.
 
 ---
-
----
-
 ##  System Architecture
 ### Example of OpenAPI FHIR Endpoint
 Below is a sample from the `openapi.yaml` file showing how the `Patient` resource endpoints are defined:
-<img width="1476" height="1146" alt="image" src="https://github.com/user-attachments/assets/9d0d0ba0-f104-4c8e-8d36-2dba7af2da0e" />
+
+Below is a sample from the `openapi.yaml` file showing how the `Patient` resource endpoints are defined:
+
+![FHIR Patient Endpoint Example](https://github.com/user-attachments/assets/54741b16-8d68-455a-be92-6d422f5334be)
+
+
+
 
 ### Components
 | Component   | Description |
@@ -120,7 +123,7 @@ POST https://hapi.fhir.org/baseR4/Immunization
 ```
 <img width="923" height="321" alt="image" src="https://github.com/user-attachments/assets/2b991270-348a-400a-8043-f0a9314743cc" />
 
-* Unit and integration testing performed for backend endpoints and FHIR resource transactions.
+ Unit and integration testing performed for backend endpoints and FHIR resource transactions.
 
 ---
 ## Project Structure
