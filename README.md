@@ -2,7 +2,8 @@
 
 ---
 
-````markdown
+```markdown
+```
 # Vaccination Tracking Made Easy: A FHIR-Based Registry for Patients and Providers
 
 ##  Project Overview
@@ -32,14 +33,42 @@ To build a functional FHIR-based Vaccination Registry that provides secure, stan
 
 ---
 ##  System Architecture
+
 ### Example of OpenAPI FHIR Endpoint
+
 Below is a sample from the `openapi.yaml` file showing how the `Patient` resource endpoints are defined:
 
-<img width="1068" height="1047" alt="image" src="https://github.com/user-attachments/assets/156c52e8-eb7e-4750-8a34-481b18bf097e" />
+```yaml
+paths:
+  /Patient:
 
+  get:
+    summary: Search Patient
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Patient
+  post:
+    summary: Create Patient
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Patient/{id}:
+```
 
 ---
-
 
 ### Components
 | Component   | Description |
