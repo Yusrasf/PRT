@@ -35,11 +35,10 @@ To build a functional FHIR-based Vaccination Registry that provides secure, stan
 ### Example of OpenAPI FHIR Endpoint
 Below is a sample from the `openapi.yaml` file showing how the `Patient` resource endpoints are defined:
 
-Below is a sample from the `openapi.yaml` file showing how the `Patient` resource endpoints are defined:
-
-![FHIR Patient Endpoint Example](https://github.com/user-attachments/assets/54741b16-8d68-455a-be92-6d422f5334be)
+<img width="1068" height="1047" alt="image" src="https://github.com/user-attachments/assets/156c52e8-eb7e-4750-8a34-481b18bf097e" />
 
 
+---
 
 
 ### Components
