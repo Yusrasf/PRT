@@ -5,7 +5,7 @@ Accept: application/fhir+json
 
 ### GET Patient by ID
 ### Retrieves a specific Patient record by ID
-GET http://localhost:8080/fhir/Patient/{id}
+GET http://localhost:8080/fhir/Patient/9
 Accept: application/fhir+json
 
 ### GET Patient by Identifier

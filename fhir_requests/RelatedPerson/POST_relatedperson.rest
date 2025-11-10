@@ -6,65 +6,36 @@ Accept: application/fhir+json
 
 {
   "resourceType": "RelatedPerson",
-
-  "identifier": [
-    {
-      "system": "http://example.org/relatedperson-id",
-      "value": "RP-001"
-    }
-  ],
-
-  "active": true,
-
+  "id": "relatedperson-4",
   "patient": {
-    "reference": "Patient/123", 
-    "display": "John Doe"
+    "reference": "Patient/14"
   },
-
   "relationship": [
     {
       "coding": [
         {
           "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "code": "MTH",
-          "display": "Mother"
+          "code": "PRN",
+          "display": "Parent"
         }
       ],
-      "text": "Mother"
+      "text": "Elternteil"
     }
   ],
-
   "name": [
     {
       "use": "official",
-      "family": "Doe",
-      "given": ["Jane"]
+      "family": "Gruber",
+      "given": [
+        "Martin"
+      ]
     }
   ],
-
-  "gender": "female",
-
-  "birthDate": "1980-03-05",
-
   "telecom": [
     {
       "system": "phone",
-      "value": "+40123123123",
-      "use": "mobile"
-    },
-    {
-      "system": "email",
-      "value": "jane.doe@email.com"
-    }
-  ],
-
-  "address": [
-    {
-      "use": "home",
-      "line": ["12 Green Street"],
-      "city": "Bucharest",
-      "postalCode": "010203",
-      "country": "RO"
+      "value": "+43 732 123456",
+      "use": "home"
     }
   ]
 }

@@ -1,0 +1,1290 @@
+
+openapi: 3.0.3
+info:
+  title: Vaccination Registry FHIR API (Template)
+  version: 0.1.0
+  description: >
+    Minimal REST interface for key FHIR resources used in a vaccination registry.
+    Payloads follow HL7 FHIR R4 JSON. Replace {server} with your base URL.
+servers:
+  - url: https://fhir.example.org/fhir
+paths:
+  /Patient:
+
+  get:
+    summary: Search Patient
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Patient
+  post:
+    summary: Create Patient
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Patient/{id}:
+
+  get:
+    summary: Read Patient
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Patient
+  put:
+    summary: Update Patient
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Patient
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Patient
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Immunization:
+
+  get:
+    summary: Search Immunization
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Immunization
+  post:
+    summary: Create Immunization
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Immunization/{id}:
+
+  get:
+    summary: Read Immunization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Immunization
+  put:
+    summary: Update Immunization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Immunization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Immunization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /ImmunizationRecommendation:
+
+  get:
+    summary: Search ImmunizationRecommendation
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of ImmunizationRecommendation
+  post:
+    summary: Create ImmunizationRecommendation
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /ImmunizationRecommendation/{id}:
+
+  get:
+    summary: Read ImmunizationRecommendation
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: ImmunizationRecommendation
+  put:
+    summary: Update ImmunizationRecommendation
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch ImmunizationRecommendation
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete ImmunizationRecommendation
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /AllergyIntolerance:
+
+  get:
+    summary: Search AllergyIntolerance
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of AllergyIntolerance
+  post:
+    summary: Create AllergyIntolerance
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /AllergyIntolerance/{id}:
+
+  get:
+    summary: Read AllergyIntolerance
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: AllergyIntolerance
+  put:
+    summary: Update AllergyIntolerance
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch AllergyIntolerance
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete AllergyIntolerance
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Condition:
+
+  get:
+    summary: Search Condition
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Condition
+  post:
+    summary: Create Condition
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Condition/{id}:
+
+  get:
+    summary: Read Condition
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Condition
+  put:
+    summary: Update Condition
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Condition
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Condition
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Medication:
+
+  get:
+    summary: Search Medication
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Medication
+  post:
+    summary: Create Medication
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Medication/{id}:
+
+  get:
+    summary: Read Medication
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Medication
+  put:
+    summary: Update Medication
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Medication
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Medication
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Encounter:
+
+  get:
+    summary: Search Encounter
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Encounter
+  post:
+    summary: Create Encounter
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Encounter/{id}:
+
+  get:
+    summary: Read Encounter
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Encounter
+  put:
+    summary: Update Encounter
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Encounter
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Encounter
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Appointment:
+
+  get:
+    summary: Search Appointment
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Appointment
+  post:
+    summary: Create Appointment
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Appointment/{id}:
+
+  get:
+    summary: Read Appointment
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Appointment
+  put:
+    summary: Update Appointment
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Appointment
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Appointment
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /ServiceRequest:
+
+  get:
+    summary: Search ServiceRequest
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of ServiceRequest
+  post:
+    summary: Create ServiceRequest
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /ServiceRequest/{id}:
+
+  get:
+    summary: Read ServiceRequest
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: ServiceRequest
+  put:
+    summary: Update ServiceRequest
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch ServiceRequest
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete ServiceRequest
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /AdverseEvent:
+
+  get:
+    summary: Search AdverseEvent
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of AdverseEvent
+  post:
+    summary: Create AdverseEvent
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /AdverseEvent/{id}:
+
+  get:
+    summary: Read AdverseEvent
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: AdverseEvent
+  put:
+    summary: Update AdverseEvent
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch AdverseEvent
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete AdverseEvent
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Practitioner:
+
+  get:
+    summary: Search Practitioner
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Practitioner
+  post:
+    summary: Create Practitioner
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Practitioner/{id}:
+
+  get:
+    summary: Read Practitioner
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Practitioner
+  put:
+    summary: Update Practitioner
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Practitioner
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Practitioner
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /PractitionerRole:
+
+  get:
+    summary: Search PractitionerRole
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of PractitionerRole
+  post:
+    summary: Create PractitionerRole
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /PractitionerRole/{id}:
+
+  get:
+    summary: Read PractitionerRole
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: PractitionerRole
+  put:
+    summary: Update PractitionerRole
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch PractitionerRole
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete PractitionerRole
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Organization:
+
+  get:
+    summary: Search Organization
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Organization
+  post:
+    summary: Create Organization
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Organization/{id}:
+
+  get:
+    summary: Read Organization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Organization
+  put:
+    summary: Update Organization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Organization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Organization
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Location:
+
+  get:
+    summary: Search Location
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Location
+  post:
+    summary: Create Location
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Location/{id}:
+
+  get:
+    summary: Read Location
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Location
+  put:
+    summary: Update Location
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Location
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Location
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Schedule:
+
+  get:
+    summary: Search Schedule
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Schedule
+  post:
+    summary: Create Schedule
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Schedule/{id}:
+
+  get:
+    summary: Read Schedule
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Schedule
+  put:
+    summary: Update Schedule
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Schedule
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Schedule
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
+
+  /Slot:
+
+  get:
+    summary: Search Slot
+    parameters:
+      - name: _id
+        in: query
+        schema: { type: string }
+      - name: _count
+        in: query
+        schema: { type: integer }
+    responses:
+      '200':
+        description: Bundle of Slot
+  post:
+    summary: Create Slot
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '201':
+        description: Created
+  /Slot/{id}:
+
+  get:
+    summary: Read Slot
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '200':
+        description: Slot
+  put:
+    summary: Update Slot
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/fhir+json:
+          schema:
+            type: object
+    responses:
+      '200':
+        description: Updated
+  patch:
+    summary: Patch Slot
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    requestBody:
+      required: true
+      content:
+        application/json-patch+json:
+          schema:
+            type: array
+    responses:
+      '200':
+        description: Patched
+  delete:
+    summary: Delete Slot
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    responses:
+      '204':
+        description: Deleted
