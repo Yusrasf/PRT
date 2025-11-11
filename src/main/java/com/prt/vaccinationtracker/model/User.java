@@ -1,0 +1,1 @@
+// Custom data models (DTOs) for user and vaccination information
