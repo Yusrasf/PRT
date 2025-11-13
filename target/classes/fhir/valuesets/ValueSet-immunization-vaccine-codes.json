@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "id": "immunization-vaccine-codes",
+  "url": "http://example.org/fhir/ValueSet/immunization-vaccine-codes",
+  "version": "1.0.0",
+  "name": "ImmunizationVaccineCodes",
+  "title": "Immunization Vaccine Codes",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-11-13",
+  "publisher": "PRT Vaccination Tracking Project",
+  "description": "ValueSet of allowed vaccine codes used in the PRT vaccination tracking system.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "concept": [
+            // Reccommended vaccines codes for children 0-6 years old
+
+            //RSV Vaccine
+            
+          { "code": "332", "display": "Respiratory syncytial virus (RSV), monoclonal antibody,IgG1κ ,(clesrovimab-cfor),0.7 mL, neonate and infant, preservative free" },
+          { "code": "306", "display": "Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ , (nirsevimab-alip), 0.5 mL, neonates and children to 24 months" },
+          { "code": "307", "display": "Respiratory syncytial virus (RSV) monoclonal antibody, IgG1κ , (nirsevimab-alip), 1 mL, neonates and children to 24 months" },
+          { "code": "326", "display": "Respiratory syncytial virus (RSV), mRNA, injectable, preservative free" },
+          { "code": "", "display": "" },
+          { "code": "", "display": "" },
+          { "code": "", "display": "" },
+          { "code": "", "display": "" },
+          { "code": "", "display": "" },
+          { "code": "", "display": "" },
+          { "code": "", "display": "" },
+
+          
+
+
+
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "java.project.sourcePaths": [
-        "vaccination-tracker"
+        "vaccination-tracker",
+        "src/main/java/com/prt/vaccinationtracker"
     ],
     "java.configuration.updateBuildConfiguration": "interactive"
 }
